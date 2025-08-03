@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Travel to Mars</title>
+    
+    <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #333;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .destination-img,
+        .gale-img,
+        .olympus-img,
+        .sand-img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #555;
+            transform: scale(1.05);
+        }
+
+        .gale-crater,
+        .olympus-mons,
+        .sand-dunes {
+            font-style: italic;
+            font-weight: bold;
+            text-decoration: underline;
+            color: #3366FF;
+            cursor: pointer;
+        }
+
+        .gale-crater:hover,
+        .olympus-mons:hover,
+        .sand-dunes:hover {
+            color: #FF6600;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #f5f5f5;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+        
+        .back-to-top {
+            font-size: 14px;
+            text-decoration: underline;
+            color: #3366FF;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            color: #FF6600;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <a id="top"></a>
+    <header class="header">
+        <h1>Travel to Mars</h1>
+    </header>
+
+    <nav class="container">
+    <ul>
+      <li><span class="gale-crater" onclick="scrollToElement('gale-crater-description')">Gale Crater</span></li>
+      <li><span class="olympus-mons" onclick="scrollToElement('olympus-mons-description')">Olympus Mons</span></li>
+      <li><span class="sand-dunes" onclick="scrollToElement('sand-dunes-description')">Sand Dunes</span></li>
+    </ul>
+  </nav>
+
+    <main class="container">
+        <img class="destination-img" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/landscapes/mountains-sunset.png" alt="Sunset over Martian mountains">
+        
+        <h2>Mars</h2>
+
+        <p class="description">
+            Indulge in the breathtaking beauty of our exotic destination. It's a place that will leave you in awe. Whether you seek adventure or tranquility, this hidden gem offers something for everyone.
+        </p>
+
+        <p class="description">
+            Embark on unforgettable adventures, explore the Gale Crater, go hiking in the majestic Olympus Mons, or simply unwind on the sandy hills. This desert will captivate your senses and create memories to last a lifetime.
+        </p>
+
+        <h1 id="gale-crater-description" style="background-color: grey;">Gale Crater</h1>
+        <p>
+            <b><i>Gale</i></b> is a crater, and probable dry lake, in the northwestern part of the Aeolis quadrangle on Mars. It is 154 km wide and estimated to be about 3.5–3.8 billion years old.
+            <img class="gale-img" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/landscapes/beach-at-dusk.png" alt="Gale Crater landscape">
+            Peace Vallis, a nearby outflow channel, appears to have been carved by water. Curiosity rover landed there in 2012 and continues exploring.
+        </p>
+
+<p style="text-align: right; margin-top: 10px;">
+  <a href="#top" class="back-to-top">↑ Back to Top</a>
+</p>
+
+        <h1 id="olympus-mons-description" style="background-color: grey;">Olympus Mons</h1>
+        <p>
+            <b><i>Olympus Mons</i></b> is a large shield volcano on Mars, standing over 21.9 km high. It's the tallest mountain in the Solar System.
+            <img class="olympus-img" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/landscapes/lava.png" alt="Olympus Mons lava field">
+            Known as "Nix Olympica" in the past, it was identified as a mountain before space probes confirmed it.
+        </p>
+        
+        <p style="text-align: right; margin-top: 10px;">
+  <a href="#top" class="back-to-top">↑ Back to Top</a>
+</p>
+
+        <h1 id="sand-dunes-description" style="background-color: grey;">Sand Dunes</h1>
+        <p>
+            <i><b>Sand dunes</b></i> are common on Mars, some almost perfectly circular.
+            <img class="sand-img" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/landscapes/sand-dunes.png" alt="Martian sand dunes">
+            Their shapes suggest wind-driven movement toward the south.
+        </p>
+        
+        <p style="text-align: right; margin-top: 10px;">
+  <a href="#top" class="back-to-top">↑ Back to Top</a>
+</p>
+
+        <p class="description">
+            Don't miss the chance to experience the magic of this exotic locale. Book your trip today and embark on a journey like no other. Your adventure awaits!
+        </p>
+    </main>
+
+    <footer>
+        <b>Available Launch Stations</b>
+        <ul>
+            <li><a href="https://www.nasa.gov/" class="cta-button" target="_blank" rel="noopener noreferrer">NASA</a></li>
+            <li><a href="https://www.spacex.com/" class="cta-button" target="_blank" rel="noopener noreferrer">SpaceX</a></li>
+            <li><a href="https://www.kennedyspacecenter.com/" class="cta-button" target="_blank" rel="noopener noreferrer" >Kennedy Space Center</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function scrollToElement(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
