@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Support Knowledge Base</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #34495e;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      margin: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
+    }
+    pre {
+      background: #eee;
+      padding: 0.5rem;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    #searchBox {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>IT Support Knowledge Base</h1>
+    <p>Step-by-step troubleshooting guides for common IT issues</p>
+  </header>
+
+  <nav>
+    <a href="#network">Network</a>
+    <a href="#software">Software</a>
+    <a href="#printer">Printer</a>
+    <a href="#performance">Performance</a>
+    <a href="#tools">Tools</a>
+  </nav>
+
+  <div class="container">
+    <input type="text" id="searchBox" placeholder="🔍 Search for an issue..." onkeyup="searchContent()">
+
+    <section id="network">
+      <h2>Network Troubleshooting</h2>
+      <h3>No Internet Connection</h3>
+      <ol>
+        <li>Check if the Ethernet cable or Wi-Fi is connected properly.</li>
+        <li>Restart modem and router (unplug 30s).</li>
+        <li>Run commands:
+          <pre>Windows: ipconfig /release && ipconfig /renew && ipconfig /flushdns
+Linux: sudo systemctl restart NetworkManager</pre>
+        </li>
+        <li>Try accessing a website by IP (http://8.8.8.8).</li>
+      </ol>
+      <h3>Slow Internet</h3>
+      <ul>
+        <li>Disconnect unused devices.</li>
+        <li>Run a speed test (speedtest.net).</li>
+        <li>Switch to Ethernet if possible.</li>
+      </ul>
+    </section>
+
+    <section id="software">
+      <h2>Software Installation</h2>
+      <h3>Cannot Install Software</h3>
+      <ol>
+        <li>Verify you have admin rights.</li>
+        <li>Check disk space.</li>
+        <li>Ensure antivirus/firewall isn’t blocking installer.</li>
+      </ol>
+      <h3>Application Crashing</h3>
+      <ul>
+        <li>Update to the latest version.</li>
+        <li>Reinstall application.</li>
+        <li>Check Event Viewer (Windows) or journalctl (Linux).</li>
+      </ul>
+    </section>
+
+    <section id="printer">
+      <h2>Printer Issues</h2>
+      <h3>Print Jobs Stuck</h3>
+      <pre>Windows:
+net stop spooler
+del /Q /F %systemroot%\System32\spool\PRINTERS\*
+net start spooler
+
+Linux:
+sudo systemctl restart cups</pre>
+      <h3>Printer Not Detected</h3>
+      <ul>
+        <li>Ensure printer is on and connected.</li>
+        <li>Reinstall drivers.</li>
+        <li>Verify printer IP address.</li>
+      </ul>
+    </section>
+
+    <section id="performance">
+      <h2>System Performance Tuning</h2>
+      <h3>Computer Running Slow</h3>
+      <ul>
+        <li>Check Task Manager (Windows) or htop (Linux).</li>
+        <li>Uninstall unused programs.</li>
+        <li>Disable startup applications.</li>
+        <li>Run disk cleanup or clear caches.</li>
+      </ul>
+      <h3>Frequent Freezes</h3>
+      <ul>
+        <li>Update drivers and OS patches.</li>
+        <li>Run hardware diagnostics.</li>
+      </ul>
+    </section>
+
+    <section id="tools">
+      <h2>Useful Tools</h2>
+      <ul>
+        <li><strong>Windows:</strong> sfc /scannow, chkdsk /f</li>
+        <li><strong>Linux:</strong> dmesg, journalctl -xe</li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    function searchContent() {
+      let input = document.getElementById('searchBox').value.toLowerCase();
+      let sections = document.querySelectorAll('.container section');
+
+      sections.forEach(section => {
+        let text = section.innerText.toLowerCase();
+        if (text.includes(input)) {
+          section.classList.remove('hidden');
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
